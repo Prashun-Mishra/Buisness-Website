@@ -61,16 +61,6 @@ export default function SectionUSA() {
           viewport={{ once: true }}
           className="text-center max-w-5xl mx-auto"
         >
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-cyan-500/10 to-teal-500/10 border border-cyan-500/20 mb-8 backdrop-blur-md"
-          >
-            <TrendingUp className="w-4 h-4 text-cyan-400" />
-            <span className="text-cyan-300 text-sm font-semibold tracking-wide uppercase">Premier Market Access</span>
-          </motion.div>
 
           <h2 className="text-7xl md:text-9xl font-black text-white mb-8 tracking-tighter leading-none">
             USA

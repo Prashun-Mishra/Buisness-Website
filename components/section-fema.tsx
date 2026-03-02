@@ -12,31 +12,13 @@ export default function SectionFEMA() {
 
   const items = [
     {
-      title: 'RBI Compliance',
+      title: 'RBI Case management - Disinvestment - ODI Compliance',
       subtitle: 'Expert Navigation',
       description: 'Expert navigation through Reserve Bank of India regulations, reporting requirements, and compliance protocols for seamless cross-border operations.',
       features: ['RBI Reporting', 'LRS Management', 'ODI Compliance'],
       icon: Gavel,
       image: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=2070&auto=format&fit=crop',
       stats: { label: 'Reports Filed', value: '5000+' },
-    },
-    {
-      title: 'Cross-Border Investment',
-      subtitle: 'Global Reach',
-      description: 'Comprehensive support for outbound investments, international fund transfers, and complete regulatory compliance management for global expansion.',
-      features: ['ODI Processing', 'Fund Transfers', 'Documentation'],
-      icon: Globe,
-      image: 'https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?q=80&w=2070&auto=format&fit=crop',
-      stats: { label: 'Transactions', value: '$50M+' },
-    },
-    {
-      title: 'Transaction Advisory',
-      subtitle: 'Strategic Guidance',
-      description: 'Strategic guidance on complex international transactions, regulatory reporting, and complete compliance assurance for your peace of mind.',
-      features: ['Transaction Support', 'Regulatory Advice', 'Risk Management'],
-      icon: RefreshCcw,
-      image: 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=2232&auto=format&fit=crop',
-      stats: { label: 'Success Rate', value: '100%' },
     },
   ]
 

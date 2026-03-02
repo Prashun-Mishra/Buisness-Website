@@ -63,21 +63,10 @@ export default function Navbar() {
           {/* Logo */}
           <button
             onClick={() => handleNavClick('home')}
-            className="flex items-center gap-3 group"
+            className="flex flex-col items-start group mt-1"
           >
-            <div className="relative w-10 h-10 rounded-xl overflow-hidden flex items-center justify-center shadow-lg hover:scale-105 transition-transform">
-              <Image
-                src="/aetos_associates_logo.jpg"
-                alt="Aetos Associates"
-                width={40}
-                height={40}
-                className="object-cover"
-              />
-            </div>
-            <div className="flex flex-col items-start">
-              <span className="text-white font-bold text-lg tracking-tight leading-none group-hover:text-primary transition-colors">Aetos</span>
-              <span className="text-slate-500 text-xs font-bold tracking-widest leading-none">ASSOCIATES</span>
-            </div>
+            <span className="text-white font-black text-2xl tracking-tighter leading-none group-hover:text-teal-400 transition-colors">AETOS</span>
+            <span className="text-teal-500 text-[0.65rem] font-bold tracking-[0.3em] leading-none mt-1">ASSOCIATES</span>
           </button>
 
           {/* Desktop Nav */}
