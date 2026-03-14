@@ -15,7 +15,7 @@ export default function SectionFEMA() {
       title: 'RBI Case management - Disinvestment - ODI Compliance',
       subtitle: 'Expert Navigation',
       description: 'Expert navigation through Reserve Bank of India regulations, reporting requirements, and compliance protocols for seamless cross-border operations.',
-      features: ['RBI Reporting', 'LRS Management', 'ODI Compliance'],
+      features: ['UIN & ODI Documentation', 'APR Compliance', 'Disinvestment & Closure', 'RBI Compounding Cases'],
       icon: Gavel,
       image: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=2070&auto=format&fit=crop',
       stats: { label: 'Reports Filed', value: '5000+' },
@@ -136,13 +136,21 @@ function ItemKeyFrame({ item, index, onConsultClick }: { item: any, index: numbe
               ))}
             </div>
 
-            <div className="flex items-center gap-8 pt-4">
-              <button onClick={onConsultClick} className="group flex items-center gap-3 text-white font-semibold">
+            <div className="flex flex-wrap items-center gap-6 pt-4">
+              <button onClick={onConsultClick} className="group flex items-center gap-2 text-white font-semibold">
                 <span className="border-b border-teal-500 pb-1 group-hover:border-white transition-colors">Start Consultation</span>
-                <ArrowRight className="w-5 h-5 text-teal-500 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="w-4 h-4 text-teal-500 group-hover:translate-x-1 transition-transform" />
               </button>
 
-              <div className="flex items-center gap-3 px-5 py-3 rounded-full bg-slate-900 border border-slate-800">
+              <a href="/blog" className="group flex items-center gap-2 text-white font-semibold">
+                <span className="border-b border-teal-500 pb-1 group-hover:border-white transition-colors">Blog</span>
+              </a>
+
+              <a href="/work" className="group flex items-center gap-2 text-white font-semibold">
+                <span className="border-b border-teal-500 pb-1 group-hover:border-white transition-colors">Our Work</span>
+              </a>
+
+              <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-slate-900 border border-slate-800">
                 <Star className="w-4 h-4 text-cyan-400 fill-cyan-400" />
                 <span className="text-sm font-bold text-white">{item.stats.value}</span>
                 <span className="text-xs text-slate-500 uppercase">{item.stats.label}</span>

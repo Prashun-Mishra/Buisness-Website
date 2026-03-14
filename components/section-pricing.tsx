@@ -23,10 +23,10 @@ export default function SectionPricing() {
       description: 'Middle East business setup',
       features: [
         'Free zone licensing',
-        'Visa processing',
         'Office space setup',
         'Legal entity formation',
         'Ongoing compliance',
+        'PRO services',
       ],
       highlighted: true,
     },
@@ -39,7 +39,7 @@ export default function SectionPricing() {
         'FEMA declaration filing',
         'Cross-border transaction advisory',
         'Ongoing regulatory support',
-        'Audit & documentation',
+        'Compliance documentation',
       ],
     },
   ]

@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+import Image from 'next/image'
 import { Linkedin, Twitter, Facebook, Instagram, ShieldCheck, CheckCircle, ArrowRight } from 'lucide-react'
 
 export default function Footer() {
@@ -38,9 +39,9 @@ export default function Footer() {
       title: 'Legal',
       links: [
         { text: 'Privacy Policy', href: '/privacy-policy' },
-        { text: 'Terms of Service', href: '#' },
-        { text: 'Cookie Policy', href: '#' },
-        { text: 'Disclaimer', href: '#' },
+        { text: 'Terms of Service', href: '/terms-of-service' },
+        { text: 'Cookie Policy', href: '/cookie-policy' },
+        { text: 'Disclaimer', href: '/disclaimer' },
       ],
     },
   ]
@@ -72,9 +73,13 @@ export default function Footer() {
           {/* Brand section (2 cols) */}
           <motion.div variants={itemVariants} className="md:col-span-2">
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 bg-gradient-to-br from-teal-500 to-cyan-500 rounded-lg flex items-center justify-center text-white font-bold text-lg shadow-lg shadow-teal-500/20">
-                A
-              </div>
+              <Image 
+                src="/aetos_associates_logo.jpg" 
+                alt="Aetos Associates Logo" 
+                width={40} 
+                height={40} 
+                className="rounded-md object-contain"
+              />
               <div className="flex flex-col">
                 <span className="text-white font-bold tracking-tight text-lg">Aetos</span>
                 <span className="text-slate-500 text-xs font-bold tracking-widest">ASSOCIATES</span>

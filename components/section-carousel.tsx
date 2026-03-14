@@ -8,7 +8,7 @@ export default function SectionCarousel() {
   const locations = [
     { name: 'Wyoming', image: '/wyoming-location.jpg', description: 'Strategic Business Hub' },
     { name: 'Delaware', image: '/delaware-new.png', description: 'Corporate Foundation' },
-    { name: 'New Jersey', image: 'https://images.unsplash.com/photo-1574786306560-63ce60754865?q=80&w=2070&auto=format&fit=crop', description: 'Innovation Corridor' },
+    { name: 'New Jersey', image: '/getlstd-property-photo.jpg', description: 'Innovation Corridor' },
     { name: 'Dubai', image: '/dubai-new.png', description: 'Middle East Gateway' },
     { name: 'New York', image: '/newyork-new.png', description: 'Financial Center' },
   ]

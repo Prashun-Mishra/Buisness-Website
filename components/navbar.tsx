@@ -26,18 +26,11 @@ export default function Navbar() {
   const handleNavClick = (id: string) => {
     setActive(id)
 
-    // If not on home page, navigate to home first
-    if (pathname !== '/') {
+    if (id === 'home') {
       router.push('/')
-      // Wait for navigation and page load, then scroll
-      setTimeout(() => {
-        const element = document.getElementById(id)
-        element?.scrollIntoView({ behavior: 'smooth', block: 'start' })
-      }, 100)
+      setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 100)
     } else {
-      // Already on home page, just scroll
-      const element = document.getElementById(id)
-      element?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      router.push(`/${id}`)
     }
   }
 
@@ -63,10 +56,19 @@ export default function Navbar() {
           {/* Logo */}
           <button
             onClick={() => handleNavClick('home')}
-            className="flex flex-col items-start group mt-1"
+            className="flex items-center gap-3 group mt-1"
           >
-            <span className="text-white font-black text-2xl tracking-tighter leading-none group-hover:text-teal-400 transition-colors">AETOS</span>
-            <span className="text-teal-500 text-[0.65rem] font-bold tracking-[0.3em] leading-none mt-1">ASSOCIATES</span>
+            <Image 
+              src="/aetos_associates_logo.jpg" 
+              alt="Aetos Associates Logo" 
+              width={40} 
+              height={40} 
+              className="rounded-md object-contain"
+            />
+            <div className="flex flex-col items-start">
+              <span className="text-white font-black text-2xl tracking-tighter leading-none group-hover:text-teal-400 transition-colors">AETOS</span>
+              <span className="text-teal-500 text-[0.65rem] font-bold tracking-[0.3em] leading-none mt-1">ASSOCIATES</span>
+            </div>
           </button>
 
           {/* Desktop Nav */}

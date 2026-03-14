@@ -1,11 +1,15 @@
 'use client'
 
+import { useState } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { ArrowRight, Globe, ShieldCheck, TrendingUp } from 'lucide-react'
 import AnimatedGradientBackground from '@/components/animated-gradient-background'
 import CompanyCounter from '@/components/company-counter'
+import RotatingImages from '@/components/rotating-images'
+import ConsultationForm from '@/components/consultation-form'
 
 export default function Hero() {
+    const [isFormOpen, setIsFormOpen] = useState(false)
     const { scrollY } = useScroll()
     const y1 = useTransform(scrollY, [0, 500], [0, 200])
     const y2 = useTransform(scrollY, [0, 500], [0, -150])
@@ -59,6 +63,7 @@ export default function Hero() {
                         {/* CTA Buttons */}
                         <div className="flex flex-wrap items-center gap-4">
                             <motion.button
+                                onClick={() => setIsFormOpen(true)}
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
                                 className="px-8 py-4 bg-gradient-to-r from-teal-600 to-cyan-600 text-white font-bold rounded-xl shadow-lg shadow-teal-500/25 flex items-center gap-2 group"
@@ -104,50 +109,13 @@ export default function Hero() {
                         transition={{ duration: 1, delay: 0.2 }}
                         className="relative hidden lg:block h-[600px]"
                     >
-                        {/* Floating Cards Animation */}
-                        <motion.div style={{ y: y1 }} className="absolute top-0 right-10 z-20">
-                            <div className="p-6 rounded-2xl bg-background/40 border border-white/10 backdrop-blur-xl shadow-2xl w-72">
-                                <div className="flex items-center gap-4 mb-4">
-                                    <div className="w-12 h-12 rounded-full bg-teal-500/20 flex items-center justify-center">
-                                        <Globe className="w-6 h-6 text-teal-400" />
-                                    </div>
-                                    <div>
-                                        <h3 className="text-white font-bold">Global Reach</h3>
-                                        <p className="text-xs text-slate-400">USA & UAE Markets</p>
-                                    </div>
-                                </div>
-                                <div className="h-2 bg-white/10 rounded-full overflow-hidden">
-                                    <div className="h-full w-3/4 bg-teal-500 rounded-full" />
-                                </div>
-                            </div>
-                        </motion.div>
 
-                        <motion.div style={{ y: y2 }} className="absolute bottom-20 left-0 z-30">
-                            <div className="p-6 rounded-2xl bg-background/40 border border-white/10 backdrop-blur-xl shadow-2xl w-72">
-                                <div className="flex items-center gap-4 mb-4">
-                                    <div className="w-12 h-12 rounded-full bg-cyan-500/20 flex items-center justify-center">
-                                        <ShieldCheck className="w-6 h-6 text-cyan-400" />
-                                    </div>
-                                    <div>
-                                        <h3 className="text-white font-bold">Compliance</h3>
-                                        <p className="text-xs text-slate-400">FEMA & Tax Safety</p>
-                                    </div>
-                                </div>
-                                <div className="flex gap-2">
-                                    <div className="px-2 py-1 rounded bg-green-500/20 text-green-400 text-xs">Verified</div>
-                                    <div className="px-2 py-1 rounded bg-cyan-500/20 text-cyan-400 text-xs">Secure</div>
-                                </div>
-                            </div>
-                        </motion.div>
 
                         {/* Central Abstract Shape/Glow */}
                         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-gradient-to-br from-teal-500/30 to-cyan-500/30 rounded-full blur-[100px] animate-pulse" />
 
-                        {/* Decorative Circle */}
-                        <svg className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] text-white/5 animate-[spin_60s_linear_infinite]" viewBox="0 0 100 100">
-                            <circle cx="50" cy="50" r="48" fill="none" stroke="currentColor" strokeWidth="0.5" strokeDasharray="4 4" />
-                            <circle cx="50" cy="50" r="38" fill="none" stroke="currentColor" strokeWidth="0.5" />
-                        </svg>
+                        {/* Rotating Grid Images */}
+                        <RotatingImages />
                     </motion.div>
                 </div>
             </div>
@@ -160,6 +128,9 @@ export default function Hero() {
                 <span className="text-slate-500 text-xs tracking-widest uppercase">Scroll to explore</span>
                 <div className="w-[1px] h-12 bg-gradient-to-b from-white to-transparent" />
             </motion.div>
+
+            {/* Consultation Form Modal */}
+            <ConsultationForm isOpen={isFormOpen} onClose={() => setIsFormOpen(false)} serviceType="General" />
         </section>
     )
 }
