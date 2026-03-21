@@ -32,17 +32,12 @@ export default function PrivacyPolicy() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-white mt-10 mb-4">3. Security of Your Information</h2>
-            <p>We implement appropriate technical and organizational security measures to protect the security of any personal information we process, including ISO 27001 certified mechanisms and bank-grade security protocols. However, please also remember that we cannot guarantee that the internet itself is 100% secure.</p>
-          </section>
-
-          <section>
-            <h2 className="text-2xl font-bold text-white mt-10 mb-4">4. Your Privacy Rights</h2>
+            <h2 className="text-2xl font-bold text-white mt-10 mb-4">3. Your Privacy Rights</h2>
             <p>Depending on your location, you may have certain rights regarding your personal information, such as the right to request access, correction, deletion, or restriction of your information. Contact us for any privacy-related requests.</p>
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-white mt-10 mb-4">5. Contact Us</h2>
+            <h2 className="text-2xl font-bold text-white mt-10 mb-4">4. Contact Us</h2>
             <p>If you have questions or comments about this policy, you may email us at privacy@aetosassociates.com.</p>
           </section>
         </div>

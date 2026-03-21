@@ -19,7 +19,7 @@ export default function SectionUSA() {
       features: ['LLC or C-Corp Formation', 'Tax Optimization Strategies', 'US GAAP Accounting'],
       icon: Building,
       image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop',
-      stats: { label: 'Incorporated in 2026', value: 'dynamic', showCounter: true },
+      stats: { label: 'Incorporated in 2025', value: 'dynamic', showCounter: true },
     },
     {
       title: 'Tax & Compliance',

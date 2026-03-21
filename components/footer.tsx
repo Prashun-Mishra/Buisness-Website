@@ -1,38 +1,31 @@
 'use client'
 
+import { useState } from 'react'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import Image from 'next/image'
 import { Linkedin, Twitter, Facebook, Instagram, ShieldCheck, CheckCircle, ArrowRight } from 'lucide-react'
+import ConsultationForm from '@/components/consultation-form'
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
+  const [isFormOpen, setIsFormOpen] = useState(false)
 
   const sections = [
     {
       title: 'Company',
       links: [
-        { text: 'About Us', href: '#' },
-        { text: 'Our Team', href: '#' },
-        { text: 'Contact Us', href: '#' },
+        { text: 'About Us', href: '/about-us' },
+        { text: 'Contact Us', onClick: () => setIsFormOpen(true) },
       ],
     },
     {
       title: 'Services',
       links: [
-        { text: 'USA Expansion', href: '#usa' },
-        { text: 'UAE Setup', href: '#uae' },
-        { text: 'FEMA Compliance', href: '#fema' },
-        { text: 'Tax Filing', href: '#' },
-      ],
-    },
-    {
-      title: 'Resources',
-      links: [
-        { text: 'Documentation', href: '#' },
-        { text: 'Client Guides', href: '#' },
-        { text: 'FAQs', href: '#' },
-        { text: 'Support', href: '#' },
+        { text: 'USA Expansion', href: '/usa' },
+        { text: 'UAE Setup', href: '/uae' },
+        { text: 'FEMA Compliance', href: '/fema' },
+        { text: 'Tax Filing', href: '/tax-filing' },
       ],
     },
     {
@@ -86,7 +79,7 @@ export default function Footer() {
               </div>
             </div>
             <p className="text-slate-400 text-sm leading-relaxed mb-8 max-w-sm">
-              Your trusted partner for global business expansion, tax compliance, and regulatory services. We simplify complex international business requirements for your growth.
+              1. Office Number 268, Sector 37, Faridabad, Haryana - 121003
             </p>
 
             <div className="flex items-center gap-4">
@@ -105,9 +98,15 @@ export default function Footer() {
               <ul className="space-y-4">
                 {section.links.map((link, lidx) => (
                   <li key={lidx}>
-                    <Link href={link.href} className="text-slate-400 hover:text-primary transition-colors text-sm font-medium block hover:translate-x-1 duration-300">
-                      {link.text}
-                    </Link>
+                    {link.onClick ? (
+                      <button onClick={link.onClick} className="text-slate-400 hover:text-primary transition-colors text-sm font-medium block hover:translate-x-1 duration-300 text-left">
+                        {link.text}
+                      </button>
+                    ) : (
+                      <Link href={link.href!} className="text-slate-400 hover:text-primary transition-colors text-sm font-medium block hover:translate-x-1 duration-300">
+                        {link.text}
+                      </Link>
+                    )}
                   </li>
                 ))}
               </ul>
@@ -115,30 +114,7 @@ export default function Footer() {
           ))}
         </motion.div>
 
-        {/* Newsletter Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="border-t border-slate-900 pt-12 pb-12"
-        >
-          <div className="bg-slate-900/30 rounded-2xl p-8 border border-slate-800 flex flex-col md:flex-row items-center justify-between gap-8">
-            <div className="max-w-md">
-              <h3 className="text-xl font-bold text-white mb-2">Subscribe to our newsletter</h3>
-              <p className="text-slate-400 text-sm">Get the latest updates on international compliance regulations and business opportunities.</p>
-            </div>
-            <div className="flex w-full md:w-auto gap-2">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="bg-background/50 border border-slate-700 rounded-lg px-4 py-3 text-white text-sm focus:outline-none focus:border-primary w-full md:w-80"
-              />
-              <button className="bg-gradient-to-r from-teal-500 to-cyan-500 text-white font-bold px-6 py-3 rounded-lg hover:shadow-lg hover:shadow-teal-500/25 transition-all flex items-center gap-2">
-                Subscribe <ArrowRight className="w-4 h-4" />
-              </button>
-            </div>
-          </div>
-        </motion.div>
+
 
         {/* Bottom section */}
         <motion.div
@@ -160,6 +136,7 @@ export default function Footer() {
           </div>
         </motion.div>
       </div>
+      <ConsultationForm isOpen={isFormOpen} onClose={() => setIsFormOpen(false)} serviceType="General" />
     </footer>
   )
 }

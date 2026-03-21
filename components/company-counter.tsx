@@ -36,7 +36,7 @@ export default function CompanyCounter() {
                 <motion.span>{rounded}</motion.span>
                 <span className="text-teal-400">+</span>
             </span>
-            <span className="text-xs text-slate-500 uppercase">Incorporated in 2026</span>
+            <span className="text-xs text-slate-500 uppercase">Incorporated in 2025</span>
         </>
     )
 }

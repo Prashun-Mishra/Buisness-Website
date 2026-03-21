@@ -12,13 +12,13 @@ export default function SectionFEMA() {
 
   const items = [
     {
-      title: 'RBI Case management - Disinvestment - ODI Compliance',
+      title: 'RBI Case management - ODI Compliance - Disinvestment',
       subtitle: 'Expert Navigation',
       description: 'Expert navigation through Reserve Bank of India regulations, reporting requirements, and compliance protocols for seamless cross-border operations.',
       features: ['UIN & ODI Documentation', 'APR Compliance', 'Disinvestment & Closure', 'RBI Compounding Cases'],
       icon: Gavel,
       image: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=2070&auto=format&fit=crop',
-      stats: { label: 'Reports Filed', value: '5000+' },
+      stats: { label: 'Reports Filed', value: '100+' },
     },
   ]
 
