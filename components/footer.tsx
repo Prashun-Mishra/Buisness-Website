@@ -78,8 +78,11 @@ export default function Footer() {
                 <span className="text-slate-500 text-xs font-bold tracking-widest">ASSOCIATES</span>
               </div>
             </div>
+            <p className="text-slate-400 text-sm leading-relaxed mb-2 max-w-sm">
+              Office Number 268, Sector 37, Faridabad, Haryana - 121003
+            </p>
             <p className="text-slate-400 text-sm leading-relaxed mb-8 max-w-sm">
-              1. Office Number 268, Sector 37, Faridabad, Haryana - 121003
+              30 N Gould St Ste R, Sheridan, Wyoming, United States of America - 82810
             </p>
 
             <div className="flex items-center gap-4">
